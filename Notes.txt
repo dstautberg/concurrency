@@ -1,0 +1,18 @@
+Threads
+- Run within the same process
+- Share memory and variables
+- Context switching is cheaper compared to switching processes
+- Threads die when the parent process dies
+- CRuby (MRI) has a Global Interpreter Lock (GIL) so only one thread is using the core at a time, and cannot span multiple cores
+  - In most cases that's not a problem: http://yehudakatz.com/2010/08/14/threads-in-ruby-enough-already
+- JRuby uses o/s level threads, can span multiple cores
+- Show thread sample, run with ruby and jruby, watch cpu
+- Show log file downloader.
+
+Fork
+
+Spawn
+
+Popen
+
+

@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dotenv (2.0.1)
+    net-ssh (2.6.8)
+    thread (0.2.0)
+
+PLATFORMS
+  java
+  ruby
+
+DEPENDENCIES
+  dotenv
+  net-ssh
+  thread

@@ -1,18 +1,23 @@
 Threads
-- Run within the same process
-- Share memory and variables
-- Context switching is cheaper compared to switching processes
-- Threads die when the parent process dies
-- CRuby (MRI) has a Global Interpreter Lock (GIL) so only one thread is using the core at a time, and cannot span multiple cores
+- Run within the same process.
+- Share memory and variables.
+- Context switching is cheaper compared to switching processes.
+- Threads die when the parent process dies.
+- CRuby (MRI) has a Global Interpreter Lock (GIL) so only one thread is using the core at a time, and cannot span multiple cores.
   - In most cases that's not a problem: http://yehudakatz.com/2010/08/14/threads-in-ruby-enough-already
-- JRuby uses o/s level threads, can span multiple cores
-- Show thread sample, run with ruby and jruby, watch cpu
+  - Still useful when threads spend a decent amount of time waiting on I/O.
+- JRuby threads can span multiple cores
 - Show log file downloader.
+- ActiveRecord connections are not shareable between threads, so you will need to disconnect and reconnect.
 
 Fork
+- http://ruby-doc.org/core-1.9.3/Process.html#method-c-fork
+- Creates a new process by copying the parent process and it's data.
+- Unicorn uses fork.  Show unicorn.rb in rsam.
 
 Spawn
-
-Popen
-
-
+- http://ruby-doc.org/core-1.9.3/Process.html#method-c-spawn
+- Creates a whole new process from scratch.
+- Other variations of spawn:
+    - system: http://ruby-doc.org/core-1.9.3/Kernel.html#method-i-system
+    - popen: http://ruby-doc.org/core-1.9.3/IO.html#method-c-popen

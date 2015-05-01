@@ -1,3 +1,0 @@
-class ThreadExample
-
-end
